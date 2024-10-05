@@ -21,3 +21,4 @@ magic.lock
 
 # MacOS
 .DS_Store
+.vscode

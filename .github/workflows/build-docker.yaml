@@ -1,0 +1,17 @@
+name: Build and Publish image to Docker Hub
+on:
+  [workflow_dispatch]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build image
+        run: docker build . -t dancard32/mojo:24.5.0
+
+      - name: Push to Docker Hub
+        run: |
+          docker push dancard32/mojo:24.5.0
